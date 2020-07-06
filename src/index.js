@@ -1,5 +1,13 @@
-import './css/style.css';
+export default function health({'name': name, 'health': health}) {
+    if(health > 50) {
+        return 'healthy';
+    };
 
-import './js/app';
+    if((health >= 15) && (health <= 50)) {
+        return 'wounded';
+    };
 
-// TODO: write your code in app.js
+    if(health < 15) {
+        return 'critical';
+    };
+}
