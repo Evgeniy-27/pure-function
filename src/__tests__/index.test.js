@@ -1,41 +1,41 @@
 import health from '../index.js';
 
-test('healthStatus = healthy', () => {
-  const data = { name: 'Маг', health: 90 };
-  expect(health(data)).toBe('healthy');
+test('health = 100', () => {
+  expect(health({'name': 'Маг', 'health': 100})).toBe('healthy');
 });
 
-test('healthStatus = wounded', () => {
-  const data = { name: 'Маг', health: 40 };
-  expect(health(data)).toBe('wounded');
+test('health = 51', () => {
+  expect(health({'name': 'Маг', 'health': 51})).toBe('healthy');
 });
 
-test('healthStatus = critical', () => {
-  const data = { name: 'Маг', health: 1 };
-  expect(health(data)).toBe('critical');
+test('health = 50', () => {
+  expect(health({'name': 'Маг', 'health': 50})).toBe('wounded');
 });
 
-test('healthStatus = dead', () => {
-  const data = { name: 'Маг', health: 0 };
-  expect(health(data)).toBe('dead');
+test('health = 49', () => {
+  expect(health({'name': 'Маг', 'health': 49})).toBe('wounded');
 });
 
-test('healthStatus = dead', () => {
-  const data = { name: 'Маг', health: -30 };
-  expect(health(data)).toBe('dead');
+test('health = 30', () => {
+  expect(health({'name': 'Маг', 'health': 30})).toBe('wounded');
 });
 
-test('health: string', () => {
-  const data = { name: 'Маг', health: 'healthy' };
-  expect(health(data)).toBe(null);
+test('health = 16', () => {
+  expect(health({'name': 'Маг', 'health': 16})).toBe('wounded');
 });
 
-test('health = undefined', () => {
-  const data = { name: 'Маг' };
-  expect(health(data)).toBe(null);
+test('health = 15', () => {
+  expect(health({'name': 'Маг', 'health': 15})).toBe('wounded');
 });
 
-test('name = undefined', () => {
-  const data = { health: 90 };
-  expect(health(data)).toBe(null);
+test('health = 14', () => {
+  expect(health({'name': 'Маг', 'health': 14})).toBe('critical');
+});
+
+test('health = 7', () => {
+  expect(health({'name': 'Маг', 'health': 7})).toBe('critical');
+});
+
+test('health = 0', () => {
+  expect(health({'name': 'Маг', 'health': 0})).toBe('critical');
 });
