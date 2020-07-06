@@ -1,5 +1,5 @@
 {
-  "name": "ajs",
+  "name": "pure-function",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -37,5 +37,13 @@
   },
   "dependencies": {
     "core-js": "^3.6.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evgeniy-27/pure-function.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Evgeniy-27/pure-function/issues"
+  },
+  "homepage": "https://github.com/Evgeniy-27/pure-function#readme"
 }
